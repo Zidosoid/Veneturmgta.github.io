@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Únete a nuestro equipo - Hotel Venetur Margarita</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Variables y Reset */
+        :root {
+            --primary: #a71e1e;
+            --secondary: #d4af37;
+            --accent: #c62828;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --text: #2d3748;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+        
+        /* Estilos generales */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: 3rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--secondary);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        .btn:hover {
+            background-color: #c19b2a;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-large {
+            padding: 18px 45px;
+            font-size: 1.3rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 10px;
+        }
+        
+        .logo-hotel {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+        
+        .logo-venetur {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+        
+        .logo-margarita {
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-top: 2px;
+            letter-spacing: 1px;
+        }
+        
+        .logo-stars {
+            color: var(--secondary);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin-top: 2px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(167, 30, 30, 0.8), rgba(167, 30, 30, 0.9)), url('https://hotelveneturmargarita.my.canva.site/images/cd6ce800742cd1118469e20eb0bb056a.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-buttons {
+            margin-top: 2rem;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Competencies Section */
+        .competencies {
+            background-color: white;
+        }
+        
+        .competencies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .competency-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary);
+        }
+        
+        .competency-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .competency-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .competency-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        /* Process Section */
+        .process {
+            background-color: var(--light);
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .process-step {
+            flex: 1;
+            text-align: center;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--secondary);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .process-step h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary) 0%, #c62828 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .cta h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .navbar {
+                padding: 50px 0;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: var(--transition);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .logo-container {
+                margin-right: 5px;
+            }
+            
+            .logo-hotel {
+                font-size: 1rem;
+            }
+            
+            .logo-venetur {
+                font-size: 1.8rem;
+            }
+            
+            .logo-margarita {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <img src="LOGO NUEVO rojo PNG.png" alt="Hotel Venetur Margarita" height="80">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Quiénes Somos</a></li>
+                    <li><a href="#competencias">Competencias</a></li>
+                    <li><a href="#proceso">Proceso</a></li>
+                    <li><a href="#postular">Postular</a></li>
+                </ul>
+                <div class="menu-toggle">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Únete a nuestro equipo y da forma a la experiencia venetur</h1>
+            <p>Buscamos más que empleados; buscamos anfitriones con pasión por el servicio.</p>
+            <div class="hero-buttons">
+                <a href="#postular" class="btn btn-large">Postúlate Aquí</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="nosotros">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quiénes Somos y qué Buscamos</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>En el <strong>Hotel Venetur Margarita</strong>, somos la cara cálida de Venezuela para el mundo. No solo ofrecemos alojamiento, creamos recuerdos. Para seguir haciéndolo, buscamos personas excepcionales que lleven la hospitalidad en la sangre.</p>
+                    <p>Si eres proactivo, te apasiona ayudar a los demás y crees en el poder de una sonrisa, tienes un lugar con nosotros.</p>
+                    <p>Nuestro equipo está formado por profesionales comprometidos con la excelencia en el servicio y la creación de experiencias memorables para nuestros huéspedes. Valoramos la diversidad, la innovación y el trabajo en equipo.</p>
+                </div>
+                <div class="about-video">
+                    <video controls autoplay muted loop>
+                        <source src="https://i.imgur.com/bUQGqbQ.mp4" type="video/mp4">
+                        <source src="" type="video/webm">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competencies Section -->
+    <section class="competencies" id="competencias">
+        <div class="container">
+            <div class="section-header">
+                <h2>Las competencias que valoramos</h2>
+                <p>Buscamos talento con habilidades específicas que encajen con nuestra cultura de servicio excepcional</p>
+            </div>
+            <div class="competencies-grid">
+                <div class="competency-card">
+                    <div class="competency-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Orientación al servicio</h3>
+                    <p>Anticiparte y superar las expectativas de nuestros huéspedes es tu prioridad. Entiendes que cada interacción es una oportunidad para crear una experiencia memorable.</p>
+                </div>
+                <div class="competency-card">
+                    <div class="competency-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>Resolución de problemas</h3>
+                    <p>Mantienes la calma y encuentras soluciones creativas, incluso bajo presión. Tu capacidad para pensar rápidamente transforma desafíos en oportunidades.</p>
+                </div>
+                <div class="competency-card">
+                    <div class="competency-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Comunicación efectiva</h3>
+                    <p>Escuchas activamente y te expresas con claridad y amabilidad en todo momento. Tu comunicación facilita entendimientos positivos con huéspedes y compañeros.</p>
+                </div>
+                <div class="competency-card">
+                    <div class="competency-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Trabajo en colaboración</h3>
+                    <p>Eres un apoyo para tus compañeros y juntos construyen un ambiente de trabajo excelente. Crees que el éxito es un logro colectivo.</p>
+                </div>
+                <div class="competency-card">
+                    <div class="competency-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Adaptabilidad</h3>
+                    <p>Te desarrollas con facilidad en un entorno dinámico y multicultural. Abrazas el cambio como una oportunidad para crecer y mejorar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="proceso">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestro proceso es diferente</h2>
+                <p>Valoramos quién eres, no solo lo que has hecho. Nuestro proceso de selección está diseñado para identificar tu potencial</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Reclutamiento nacional</h3>
+                    <p>Creemos que el talento no tiene fronteras. Postúlate desde cualquier lugar de Venezuela. Realizamos procesos de selección inclusivos que valoran la diversidad.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Evaluación por competencias</h3>
+                    <p>Irás más allá del CV; resolverás situaciones reales que enfrentarás en el hotel. Evaluamos tu potencial y habilidades prácticas más que tu historial académico.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Oportunidad real</h3>
+                    <p>Buscamos incorporar talento fresco que fortalezca nuestro equipo desde el primer día. Ofrecemos desarrollo profesional continuo y oportunidades de crecimiento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="postular">
+        <div class="container">
+            <h2>¿Listo para dar Forma a la experiencia Venetur?</h2>
+            <p>Únete a nuestro equipo y forma parte de una organización que valora tu talento y pasión por el servicio excepcional.</p>
+            <a href="https://hiringroom.com" target="_blank" class="btn btn-large">Postúlate Aquí</a>
+            <p style="margin-top: 20px; font-size: 1rem;">Serás redirigido a nuestro formulario seguro en HiringRoom.com</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Hotel Venetur Margarita</h3>
+                    <p>Somos la cara cálida de Venezuela para el mundo, creando experiencias memorables para nuestros huéspedes.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">Quiénes Somos</a></li>
+                        <li><a href="#competencias">Competencias</a></li>
+                        <li><a href="#proceso">Proceso</a></li>
+                        <li><a href="#postular">Postular</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Isla de Margarita, Venezuela</li>
+                        <li><i class="fas fa-phone"></i> +58 412-2203178</li>
+                        <li><i class="fas fa-envelope"></i> gerenciageneralhvm@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Hotel Venetur Margarita. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menú móvil
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer clic en un enlace (móvil)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Efecto de scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Efecto de aparición al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Aplicar efecto a las tarjetas de competencias
+        document.querySelectorAll('.competency-card, .process-step').forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
